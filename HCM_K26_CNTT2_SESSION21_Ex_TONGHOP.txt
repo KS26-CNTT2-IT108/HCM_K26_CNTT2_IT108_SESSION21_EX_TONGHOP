@@ -1,0 +1,51 @@
+SESSION21
+(Bài tập tổng hợp) Hành Trình Xử Lý 1 Lỗi Cài Đặt Thật
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+
+Phần 1: Googling đúng cách
+Vì sao câu văn nói kém: có nhiều từ thừa (“tại sao”, “thầy ơi”) và thiếu mã lỗi nguyên văn, nên Google kéo về bài tâm sự, diễn đàn.
+Bóc tách lỗi:
+Thành phần			Nội dung
+Phần mềm / HĐH			npm (Node.js), Windows 11
+Mã lỗi nguyên văn		'npm' is not recognized as an internal or external command, operable program or batch file.
+Thao tác			Gõ npm -v trong Terminal VS Code
+	3 truy vấn (mỗi câu 1 toán tử):
+	site:: npm is not recognized Windows 11 site:stackoverflow.com
+	" ": "'npm' is not recognized as an internal or external command"
+	-: npm not recognized Windows 11 -xp -vista
+
+Phần 2: Thẩm định StackOverflow
+Tiêu chí			Câu A			Câu B
+Vote & Tích xanh		+186, có tích xanh	+2, không tích xanh
+Thời gian			2 năm trước		9 năm trước
+Tags				windows, npm khớp	windows-xp không khớp
+
+	Chọn câu A. B là bẫy vì dành cho Windows XP, làm trên Windows 11 không sửa được lỗi PATH và có thể hỏng driver mạng.
+	Quy trình 30 giây: bỏ qua mô tả dài -> cuộn xuống Answers -> tìm câu có tích xanh ✓ hoặc Upvotes cao nhất -> đọc code trong khung xám.
+
+Phần 3: Hỏi AI đúng cách
+Prompt 3 Thành phần:
+	[Context] Laptop Windows 11, vừa cài Node.js, chạy lệnh trong Terminal VS Code.
+	Đã thêm C:\Program Files\nodejs\ vào PATH, mở lại Terminal nhưng vẫn lỗi.
+	[Raw Error] 'npm' is not recognized as an internal or external command,
+	operable program or batch file.
+	[Instruction] Giải thích tiếng Việt dễ hiểu, nêu nguyên nhân và các bước kiểm tra an toàn.
+T	hiếu thông tin thì hỏi lại, không đoán mò.
+Câu AI ở mục 3e không an toàn:
+	Vi phạm nguyên tắc 1: del /f /s /q C:\Windows\System32\* xóa toàn bộ file hệ thống Windows.
+	Vi phạm nguyên tắc 2: lỗi PATH không liên quan cache hay System32, lời hứa “lỗi tự hết” là bịa.
+Phản hồi AI: không chạy lệnh, hỏi lại “Vì sao xóa System32 lại sửa được lỗi PATH? Cho tôi cách kiểm tra PATH an toàn hơn”, rồi đối chiếu bằng Google hoặc tài liệu chính thức.
+
+Phần 4: Bug Report
+Tin nhắn kém: “Thầy ơi máy em bị lỗi, cài node xong không dùng được, giúp em với.”
+Tin nhắn chuẩn:
+Mảnh ghép  Nội dung
+Context    Windows 11,vừa cài Node.js,gõ npm -v trong Terminal VS Code;đã làm theo câu StackOverflow +186 vote(thêm C:\Program Files\nodejs\ vào PATH, mở lại Terminal)
+Expected   Hiện số phiên bản npm
+Actual	   Vẫn báo 'npm' is not recognized as an internal or external command...
+Log & Screenshot   Đính kèm ảnh chụp Terminal có dòng lỗi
+Chụp màn hình: phím tắt Windows + Shift + S. Bảo mật: che thông tin nhạy cảm (tên tài khoản, email, mật khẩu, API Key) trước khi gửi.
